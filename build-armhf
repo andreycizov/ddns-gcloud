@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR=$(readlink -f ../../OS/openssl/openssl-1.1.1c/)
+
+export OPENSSL_LIB_DIR=$DIR
+export OPENSSL_INCLUDE_DIR=$DIR/include/
+export OPENSSL_STATIC=1
+
+cargo build --target armv7-unknown-linux-gnueabihf $@
